@@ -3,7 +3,7 @@ from src.logger import logging
 
 def error_message_detail(error,error_detail:sys):
     _,_,exc_tb = error_detail.exc_info()
-    error_message = f"Script: [{exc_tb.tb_frame.f_code.co_filename}], Line: [{exc_tb.tb_lineno}], Message: [{str(error)}]"
+    error_message = f"Script: [{exc_tb.tb_frame.f_code.co_filename}] Line: [{exc_tb.tb_lineno}] Message: [{str(error)}]"
     return error_message
     
 class CustomException(Exception):
