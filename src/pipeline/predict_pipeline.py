@@ -5,8 +5,15 @@ from src.exception import CustomException
 from src.components.data_transformation import TimestampTransformer, InteractionTransformer, CubeRootTransformer
 
 class PredictPipeline():
-    def __init__(self, df):
-        self.df = df
+    def __init__(self, data):
+        try:
+            assert list(data.keys()) == ['Time_step', 'Transaction_Id', 'Sender_Id', 'Sender_Account', 'Sender_Country', 'Sender_Sector', 
+                                'Sender_lob', 'Bene_Id', 'Bene_Account', 'Bene_Country', 'USD_amount', 'Transaction_Type']
+            self.df = pd.DataFrame(data, index=[0])
+        
+        except Exception as e:
+            logging.error(CustomException(e))
+            raise e
 
     def predict(self):
         model_pipeline = load_object("artifacts/model_pipeline.pkl")
@@ -28,11 +35,12 @@ if __name__=="__main__":
     "USD_amount": 574.44,
     "Transaction_Type": "MAKE-PAYMENT"
     }
-    df = pd.DataFrame(data, index=[0])
 
     try:
-        prediction_pipeline = PredictPipeline(df)
+        prediction_pipeline = PredictPipeline(data)
         prediction = prediction_pipeline.predict()
+        logging.info("Prediction done")
+
     except Exception as e:
         logging.error(CustomException(e))
         raise e
