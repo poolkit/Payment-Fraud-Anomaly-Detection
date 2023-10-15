@@ -12,6 +12,10 @@ from sklearn.ensemble import IsolationForest
 from pathlib import Path
 
 def model_trainer_pipeline():
+    '''
+    Takes the path and combines the pipeline and fit it.
+    '''
+    
     filepath = Path("data/original/training_data.csv")
 
     data_loader = DataLoader(filepath)
