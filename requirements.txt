@@ -10,6 +10,7 @@ importlib_metadata
 pydantic
 uvicorn
 setuptools
+requests
 typing
 ensure
 ipykernel

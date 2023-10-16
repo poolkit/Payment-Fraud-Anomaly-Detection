@@ -5,7 +5,7 @@ from src.exception import CustomException
 from src.components.data_transformation import TimestampTransformer, InteractionTransformer, CubeRootTransformer
 
 class PredictPipeline():
-    def __init__(self, data):
+    def __init__(self, data:dict):
         try:
             assert list(data.keys()) == ['Time_step', 'Transaction_Id', 'Sender_Id', 'Sender_Account', 'Sender_Country', 'Sender_Sector', 
                                 'Sender_lob', 'Bene_Id', 'Bene_Account', 'Bene_Country', 'USD_amount', 'Transaction_Type']
