@@ -4,6 +4,11 @@ matplotlib
 seaborn
 scikit-learn
 pathlib
+fastapi
+streamlit
+importlib_metadata
+pydantic
+uvicorn
 setuptools
 typing
 ensure

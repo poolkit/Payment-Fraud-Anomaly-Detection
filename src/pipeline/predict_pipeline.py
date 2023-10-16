@@ -22,17 +22,17 @@ class PredictPipeline():
 
 if __name__=="__main__":
     data = {
-    "Time_step": "07-11-2026  01:14:29",
-    "Transaction_Id": "MAKE-PAYMENT-318236",
-    "Sender_Id": "JPMC-CLIENT-318205",
-    "Sender_Account": "ACCOUNT-318216",
+    "Time_step": "26-01-2054  18:27:21",
+    "Transaction_Id": "PAY-BILL-2143836",
+    "Sender_Id": "JPMC-CLIENT-2143803",
+    "Sender_Account": "ACCOUNT-2143814",
     "Sender_Country": "USA",
-    "Sender_Sector": 36226,
+    "Sender_Sector": 7117,
     "Sender_lob": "CCB",
-    "Bene_Id": "JPMC-CLIENT-318207",
-    "Bene_Account": "ACCOUNT-318219",
+    "Bene_Id": "COMPANY-2143807",
+    "Bene_Account": "ACCOUNT-2143812",
     "Bene_Country": "USA",
-    "USD_amount": 574.44,
+    "USD_amount": 853.77,
     "Transaction_Type": "MAKE-PAYMENT"
     }
 
