@@ -1,0 +1,15 @@
+FROM python:3.8-slim
+
+WORKDIR /app
+
+COPY web-app/frontend/requirements.txt .
+
+RUN pip install -r ./requirements.txt
+
+COPY web-app/frontend/ .
+
+EXPOSE 5000
+
+ENV NAME Frontend
+
+CMD ["streamlit", "run", "--server.port", "5000", "app.py"]

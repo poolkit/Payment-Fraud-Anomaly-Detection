@@ -39,7 +39,7 @@ user_input = json.dumps(input_data)
 
 if st.button("Get Prediction"):
     # Send user input to FastAPI for prediction
-    fastapi_url = "http://127.0.0.1:8000/predict"  # Replace with your FastAPI server URL
+    fastapi_url = "http://backend:8000/predict"  # Replace with your FastAPI server URL
 
     try:
         response = requests.post(fastapi_url, data=user_input)

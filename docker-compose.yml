@@ -3,7 +3,7 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: ./app/frontend/Dockerfile.frontend
+      dockerfile: ./web-app/frontend/Dockerfile.frontend
     image: poolkit/anomaly-frontend:latest
     ports:
       - "5000:5000"
@@ -13,5 +13,7 @@ services:
   backend:
     build:
       context: .
-      dockerfile: ./app/backend/Dockerfile.backend
+      dockerfile: ./web-app/backend/Dockerfile.backend
     image: poolkit/anomaly-backend:latest
+    ports:
+      - "8000:8000"

@@ -1,4 +1,0 @@
-uvicorn
-streamlit
-requests
-importlib_metadata

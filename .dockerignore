@@ -1,6 +1,7 @@
 logs/
 data/
-notebook/
+notebooks/
 .ipynb_checkpoints/
 anomaly_detection.egg-info/
 venv/
+output.doc
