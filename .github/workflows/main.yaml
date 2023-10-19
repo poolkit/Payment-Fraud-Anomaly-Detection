@@ -39,8 +39,8 @@ jobs:
 
       - name: Build and push Docker images
         run: |
-          docker build -t ${{ secrets.AWS_ECR_LOGIN_URI }}/frontend:latest -f web-app/frontend/Dockerfile.frontend
-          docker build -t ${{ secrets.AWS_ECR_LOGIN_URI }}/backend:latest -f web-app/backend/Dockerfile.backend
+          docker build -t ${{ secrets.AWS_ECR_LOGIN_URI }}/frontend:latest -f web-app/frontend/Dockerfile.frontend .
+          docker build -t ${{ secrets.AWS_ECR_LOGIN_URI }}/backend:latest -f web-app/backend/Dockerfile.backend .
           docker push ${{ secrets.AWS_ECR_LOGIN_URI }}/frontend:latest
           docker push ${{ secrets.AWS_ECR_LOGIN_URI }}/backend:latest
 
