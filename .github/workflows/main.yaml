@@ -39,8 +39,8 @@ jobs:
 
       - name: Create ECR Repositories
         run: |
-          aws ecr create-repository --repository-name anomaly-frontend --image-scanning-configuration scanOnPush=true --region ${{ secrets.AWS_REGION }}
-          aws ecr create-repository --repository-name anomaly-backend --image-scanning-configuration scanOnPush=true --region ${{ secrets.AWS_REGION }}
+          aws ecr create-repository --repository-name anomaly-frontend --image-scanning-configuration scanOnPush=true --region ${{ secrets.AWS_REGION }} || true
+          aws ecr create-repository --repository-name anomaly-backend --image-scanning-configuration scanOnPush=true --region ${{ secrets.AWS_REGION }} || true
 
       - name: Build/Push Frontend Docker Image
         run: |
