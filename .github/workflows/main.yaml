@@ -37,19 +37,16 @@ jobs:
       - name: Login to Amazon ECR
         run: aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_LOGIN_URI }}
 
-      - name: Build and push Docker images
+      - name: Build/Push Frontend Docker Image
         run: |
-          docker build -t frontend:latest -f web-app/frontend/Dockerfile.frontend .
-          docker build -t backend:latest -f web-app/backend/Dockerfile.backend .
-          docker tag frontend:latest ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}
-          docker tag backend:latest ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}
+          docker build -t ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}/frontend:latest -f web-app/frontend/Dockerfile.frontend .
+          docker push ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}/frontend:latest
           
-          # docker build -t ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}/frontend:latest -f web-app/frontend/Dockerfile.frontend .
-          # docker build -t ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}/backend:latest -f web-app/backend/Dockerfile.backend .
-  
-          docker push ${{ secrets.AWS_ECR_LOGIN_URI }}/frontend:latest
-          docker push ${{ secrets.AWS_ECR_LOGIN_URI }}/backend:latest
-
+      - name: Build/Push Backend Docker Image
+        run: |
+          docker build -t ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}/backend:latest -f web-app/backend/Dockerfile.backend .
+          docker push ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}/backend:latest
+          
   deploy-aws:
     name: Continuous Deployment
     needs: build-and-push-ecr-image
