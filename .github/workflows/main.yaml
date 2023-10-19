@@ -59,6 +59,11 @@ jobs:
     needs: build-and-push-ecr-image
     runs-on: self-hosted
     steps:
+      - name: Install Utilities
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq unzip
+          
       - name: Configure AWS credentials
         run: |
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
