@@ -2,7 +2,7 @@ import pandas as pd
 from src.utils import load_object
 from src.logger import logging
 from src.exception import CustomException
-from src.components.data_transformation import TimestampTransformer, InteractionTransformer, CubeRootTransformer
+from src.components.data_transformation import TimestampTransformer, InteractionTransformer, CubeRootTransformer, TargetEncoder, ColumnDropper
 
 class PredictPipeline():
     def __init__(self, data:dict):
