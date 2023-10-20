@@ -10,6 +10,7 @@
   - [Dataset](#dataset)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+  - [Training](#training)
   - [Deployment](#deployment)
   - [Usage](#usage)
   - [Continuous Integration and Continuous Deployment (CI/CD)](#continuous-integration-and-continuous-deployment-cicd)
