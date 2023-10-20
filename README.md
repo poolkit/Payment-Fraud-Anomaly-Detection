@@ -26,7 +26,7 @@ Detecting anomalies in your payment data is crucial for securing your financial 
 
 🌟 This project offers the following key features:
 
-- **Isolation Forest**: The Isolation Forest algorithm for robust anomaly detection.
+- **Unsupervised Learning**: The Isolation Forest algorithm for robust anomaly detection.
 
 - **Web Application**: Fastapi backend to serve Streamlit frontend.
 
