@@ -125,4 +125,6 @@ Before getting started, make sure you have the following prerequisites:
      AWS_REGION
      AWS_ECR_LOGIN_URI = <<your-aws-account-id>>.dkr.ecr.<<aws-region>>.amazonaws.com
      ```
-
+6. Run the CI/CD pipeline and let it finish.
+7. Go to EC2 inbound rules and add two custom TCP with ports 8000 and 5000.
+8. Finally, check the app running on EC2 public ip.
