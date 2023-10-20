@@ -10,10 +10,10 @@
   - [Dataset](#dataset)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Continuous Integration and Continuous Deployment (CI/CD)](#continuous-integration-and-continuous-deployment-cicd)
-- [Deploying on AWS](#deploying-on-aws)
+  - [Deployment](#deployment)
+  - [Usage](#usage)
+  - [Continuous Integration and Continuous Deployment (CI/CD)](#continuous-integration-and-continuous-deployment-cicd)
+  - [Deploying on AWS](#deploying-on-aws)
 
 ## Introduction
 
@@ -60,6 +60,14 @@ Before getting started, make sure you have the following prerequisites:
 2. Install the required Python dependencies:
    ```bash
    pip install -r requirements.txt
+   ```
+
+### Training
+
+1. Change the data path in train_pipeline.py
+2. Run the script to train and save the model in the artifacts folder.
+   ```
+   python train_pipeline.py
    ```
 
 ### Deployment
