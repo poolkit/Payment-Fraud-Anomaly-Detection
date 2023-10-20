@@ -1,12 +1,13 @@
 # Payment Anomaly Detection 🚀
 
-![Anomaly Detection](https://yourimageurl.com/anomaly_detection.png)
+![Anomaly Detection](https://www.eway.com.au/wp-content/uploads/sites/12/2021/08/tools_for_card_not_present_fraud.jpg)
 
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Features](#features)
 - [Getting Started](#getting-started)
+  - [Dataset](#dataset)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Deployment](#deployment)
@@ -35,6 +36,9 @@ Detecting anomalies in your payment data is crucial for securing your financial 
 - **Continuous Integration and Continuous Deployment (CI/CD)**: GitHub Actions for automating the development workflow.
 
 ## Getting Started
+
+### Dataset
+📊 JP Morgan Chase has prepared a synthetic dataset, for research and development purposes. It can be found on [JP Morgan's Synthetic Data Webpage](https://www.jpmorgan.com/technology/artificial-intelligence/initiatives/synthetic-data/payments-data-for-fraud-detection). To access the dataset, send an email to the address provided on the given link.
 
 ### Prerequisites
 
